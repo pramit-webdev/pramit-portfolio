@@ -4,14 +4,29 @@
 <meta charset="UTF-8">
 <title>Pramit Das — AI Backend Engineer</title>
 <script src="https://cdn.tailwindcss.com"></script>
+
 <style>
   body {
     background: radial-gradient(circle at 20% 20%, #111827, #000000 60%);
   }
+
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0px); }
+  }
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .glow {
+    background: radial-gradient(circle at center, rgba(59,130,246,0.35), transparent 70%);
+    filter: blur(80px);
+  }
 </style>
 </head>
 
-<body class="text-white min-h-screen">
+<body class="text-white min-h-screen relative overflow-hidden">
 
 <nav class="flex justify-between p-6 border-b border-white/10 backdrop-blur">
   <div class="text-xl font-bold tracking-wide">Pramit Das</div>
@@ -24,14 +39,19 @@
   </div>
 </nav>
 
-<section class="max-w-6xl mx-auto px-10 py-24">
+<section class="max-w-6xl mx-auto px-10 py-24 relative">
+
+  <!-- Glow background -->
+  <div class="absolute inset-0 -z-10 flex justify-center">
+    <div class="w-[600px] h-[600px] glow"></div>
+  </div>
 
   <!-- Hero -->
   <div class="grid md:grid-cols-2 gap-16 items-center">
 
     <div>
-      <h1 class="text-6xl font-bold leading-tight">
-        Pramit Das<br>
+      <h1 class="text-6xl font-bold leading-tight relative">
+        <span class="relative z-10">Pramit Das</span><br>
         <span class="text-blue-500">AI Backend Engineer</span>
       </h1>
 
@@ -41,26 +61,26 @@
       </p>
 
       <!-- Contact Strip -->
-      <div class="mt-6 text-gray-400 space-y-1">
+      <div class="mt-6 flex flex-col gap-2 text-gray-300 text-sm tracking-wide">
         <div>
-          📧 <a href="mailto:your@email.com" class="hover:text-white">daspramit92@gmail.com</a>
+          📧 <a href="mailto:daspramit92@gmail.com" class="hover:text-white">daspramit92@gmail.com</a>
         </div>
         <div>
-          📞 <a href="tel:+91XXXXXXXXXX" class="hover:text-white">+91 90380 41074</a>
+          📞 <a href="tel:+919038041074" class="hover:text-white">+91 90380 41074</a>
         </div>
       </div>
 
       <div class="mt-10 flex gap-6">
-        <a href="clinassist.html" class="px-6 py-3 bg-blue-600 rounded-lg hover:bg-blue-500">
+        <a href="clinassist.html" class="px-6 py-3 bg-blue-600 rounded-lg hover:bg-blue-500 transition">
           View ClinAssist
         </a>
-        <a href="resume.html" class="px-6 py-3 border border-white/20 rounded-lg hover:border-white">
+        <a href="resume.html" class="px-6 py-3 border border-white/20 rounded-lg hover:border-white transition">
           View Resume
         </a>
       </div>
     </div>
 
-    <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-xl shadow-2xl">
+    <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-xl shadow-2xl float">
       <h2 class="text-xl font-semibold">What I build</h2>
       <ul class="text-gray-400 mt-4 space-y-3">
         <li>• ICD-10 semantic engines</li>
@@ -76,7 +96,7 @@
   <div class="grid md:grid-cols-2 gap-10 mt-24">
 
     <a href="clinassist.html" class="group">
-      <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-xl hover:border-blue-500 transition">
+      <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-xl hover:border-blue-500 hover:scale-[1.02] transition-all duration-300">
         <h2 class="text-2xl font-semibold group-hover:text-blue-500">
           ClinAssist AI
         </h2>
@@ -87,7 +107,7 @@
     </a>
 
     <a href="docsync.html" class="group">
-      <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-xl hover:border-blue-500 transition">
+      <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-xl hover:border-blue-500 hover:scale-[1.02] transition-all duration-300">
         <h2 class="text-2xl font-semibold group-hover:text-blue-500">
           DocuSync
         </h2>
