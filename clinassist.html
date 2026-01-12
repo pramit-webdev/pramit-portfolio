@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ClinAssist AI</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white p-12">
+
+<h1 class="text-4xl font-bold">ClinAssist AI</h1>
+
+<p class="text-gray-400 mt-4">
+ClinAssist converts doctor notes into structured, ICD-10-coded,
+FHIR-compatible medical records.
+</p>
+
+<pre class="bg-gray-900 p-6 rounded-xl mt-8 text-gray-300">
+Doctor note
+→ LLM fact extraction
+→ ICD-10 semantic engine
+→ SOAP + insurance text
+→ Database
+→ FHIR Bundle
+</pre>
+
+<ul class="list-disc list-inside text-gray-400 mt-6">
+<li>FAISS + SentenceTransformer ICD engine</li>
+<li>Patient visit tracking</li>
+<li>FHIR R4 export</li>
+<li>Insurance-ready output</li>
+</ul>
+
+<a href="index.html" class="text-blue-400 mt-8 inline-block">← Back</a>
+
+</body>
+</html>
