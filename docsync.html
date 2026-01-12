@@ -3,23 +3,42 @@
 <head>
 <title>DocuSync</title>
 <script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { background: radial-gradient(circle at 20% 20%, #111827, #000000 60%); }
+</style>
 </head>
-<body class="bg-black text-white p-12">
 
-<h1 class="text-4xl font-bold">DocuSync</h1>
+<body class="text-white min-h-screen p-12">
 
-<p class="text-gray-400 mt-4">
-AI platform for searching, summarizing, and comparing documents using RAG.
+<a href="index.html" class="text-gray-400 hover:text-white">← Home</a>
+
+<h1 class="text-5xl font-bold mt-10">DocuSync</h1>
+<p class="text-gray-400 text-xl mt-4 max-w-3xl">
+DocuSync is an AI-powered document intelligence platform that lets users
+search, summarize, and compare large collections of files using RAG.
 </p>
 
-<ul class="list-disc list-inside text-gray-400 mt-6">
-<li>FastAPI backend</li>
-<li>FAISS semantic search</li>
-<li>LangGraph multi-agent workflows</li>
-<li>PDF, DOCX, CSV ingestion</li>
-</ul>
+<div class="grid md:grid-cols-2 gap-10 mt-16">
 
-<a href="index.html" class="text-blue-400 mt-8 inline-block">← Back</a>
+  <div class="bg-white/5 border border-white/10 p-8 rounded-2xl">
+    <h2 class="text-xl font-semibold">Core capabilities</h2>
+    <ul class="text-gray-400 mt-3 space-y-2">
+      <li>• FAISS semantic search</li>
+      <li>• LangGraph multi-agent workflows</li>
+      <li>• PDF, DOCX, CSV ingestion</li>
+      <li>• FastAPI backend</li>
+    </ul>
+  </div>
+
+  <div class="bg-white/5 border border-white/10 p-8 rounded-2xl">
+    <h2 class="text-xl font-semibold">Why it’s valuable</h2>
+    <p class="text-gray-400 mt-3">
+      Most organizations have thousands of unstructured documents.
+      DocuSync turns them into a queryable knowledge system.
+    </p>
+  </div>
+
+</div>
 
 </body>
 </html>

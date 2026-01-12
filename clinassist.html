@@ -3,17 +3,23 @@
 <head>
 <title>ClinAssist AI</title>
 <script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { background: radial-gradient(circle at 20% 20%, #111827, #000000 60%); }
+</style>
 </head>
-<body class="bg-black text-white p-12">
 
-<h1 class="text-4xl font-bold">ClinAssist AI</h1>
+<body class="text-white min-h-screen p-12">
 
-<p class="text-gray-400 mt-4">
-ClinAssist converts doctor notes into structured, ICD-10-coded,
-FHIR-compatible medical records.
+<a href="index.html" class="text-gray-400 hover:text-white">← Home</a>
+
+<h1 class="text-5xl font-bold mt-10">ClinAssist AI</h1>
+<p class="text-gray-400 text-xl mt-4 max-w-3xl">
+ClinAssist is an AI-powered clinical documentation and coding engine that
+converts doctor notes into structured, ICD-10-coded, FHIR-compatible medical records.
 </p>
 
-<pre class="bg-gray-900 p-6 rounded-xl mt-8 text-gray-300">
+<div class="mt-16 bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-xl">
+<pre class="text-gray-300">
 Doctor note
 → LLM fact extraction
 → ICD-10 semantic engine
@@ -21,15 +27,27 @@ Doctor note
 → Database
 → FHIR Bundle
 </pre>
+</div>
 
-<ul class="list-disc list-inside text-gray-400 mt-6">
-<li>FAISS + SentenceTransformer ICD engine</li>
-<li>Patient visit tracking</li>
-<li>FHIR R4 export</li>
-<li>Insurance-ready output</li>
-</ul>
+<div class="grid md:grid-cols-2 gap-10 mt-16">
+  <div class="bg-white/5 border border-white/10 p-8 rounded-2xl">
+    <h2 class="text-xl font-semibold">Why it matters</h2>
+    <p class="text-gray-400 mt-3">
+      Hospitals, insurers, and ABDM require structured records.
+      Doctors write free-text. ClinAssist bridges that gap.
+    </p>
+  </div>
 
-<a href="index.html" class="text-blue-400 mt-8 inline-block">← Back</a>
+  <div class="bg-white/5 border border-white/10 p-8 rounded-2xl">
+    <h2 class="text-xl font-semibold">What I built</h2>
+    <ul class="text-gray-400 mt-3 space-y-2">
+      <li>• FAISS + SentenceTransformer ICD engine</li>
+      <li>• Patient-level visit tracking</li>
+      <li>• FHIR R4 bundle generator</li>
+      <li>• Insurance-ready SOAP output</li>
+    </ul>
+  </div>
+</div>
 
 </body>
 </html>
