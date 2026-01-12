@@ -1,40 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <title>Contact — Pramit Das</title>
 <script src="https://cdn.tailwindcss.com"></script>
+
 <style>
-body { background: radial-gradient(circle at 20% 20%, #111827, #000000 60%); }
+body {
+  background: radial-gradient(circle at 20% 20%, #111827, #000000 60%);
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.glow {
+  background: radial-gradient(circle at center, rgba(59,130,246,0.35), transparent 70%);
+  filter: blur(80px);
+}
 </style>
 </head>
 
-<body class="text-white min-h-screen p-12">
+<body class="text-white min-h-screen relative overflow-x-hidden">
 
-<a href="index.html" class="text-gray-400 hover:text-white">← Home</a>
-
-<h1 class="text-5xl font-bold mt-10">Contact</h1>
-<p class="text-gray-400 text-xl mt-4 max-w-2xl">
-If you’re hiring for backend, AI, or healthcare technology roles,
-I’d love to connect.
-</p>
-
-<div class="grid md:grid-cols-2 gap-10 mt-16">
-
-  <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-xl">
-    <h2 class="text-xl font-semibold">Email</h2>
-    <p class="text-blue-400 mt-4">
-      daspramit92@gmail.com
-    </p>
-  </div>
-
-  <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-xl">
-    <h2 class="text-xl font-semibold">Location</h2>
-    <p class="text-gray-400 mt-4">
-      Kolkata, India
-    </p>
-  </div>
-
+<!-- Glow -->
+<div class="absolute inset-0 -z-10 flex justify-center pointer-events-none">
+  <div class="w-[600px] h-[600px] glow"></div>
 </div>
+
+<nav class="flex justify-between p-6 border-b border-white/10 backdrop-blur">
+  <a href="index.html" class="text-gray-400 hover:text-white">← Home</a>
+  <div class="text-gray-400">Contact</div>
+</nav>
+
+<section class="max-w-5xl mx-auto px-10 py-24">
+
+  <h1 class="text-6xl font-bold leading-tight">
+    Let’s <span class="text-blue-500">Connect</span>
+  </h1>
+
+  <p class="text-gray-400 text-xl mt-6 max-w-2xl">
+    If you’re hiring for backend, AI, or healthcare technology roles,
+    I’d love to connect and discuss how I can contribute.
+  </p>
+
+  <div class="grid md:grid-cols-2 gap-12 mt-20">
+
+    <div class="bg-white/5 border border-white/10 p-10 rounded-2xl backdrop-blur-xl shadow-2xl float">
+      <h2 class="text-xl font-semibold mb-4">Email</h2>
+      <p class="text-blue-400 text-lg">
+        <a href="mailto:daspramit92@gmail.com" class="hover:underline">
+          daspramit92@gmail.com
+        </a>
+      </p>
+    </div>
+
+    <div class="bg-white/5 border border-white/10 p-10 rounded-2xl backdrop-blur-xl shadow-2xl">
+      <h2 class="text-xl font-semibold mb-4">Location</h2>
+      <p class="text-gray-300 text-lg">
+        Kolkata, India
+      </p>
+    </div>
+
+  </div>
+
+</section>
 
 </body>
 </html>

@@ -1,53 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <title>ClinAssist AI</title>
 <script src="https://cdn.tailwindcss.com"></script>
+
 <style>
-  body { background: radial-gradient(circle at 20% 20%, #111827, #000000 60%); }
+body {
+  background: radial-gradient(circle at 20% 20%, #111827, #000000 60%);
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.glow {
+  background: radial-gradient(circle at center, rgba(59,130,246,0.35), transparent 70%);
+  filter: blur(80px);
+}
 </style>
 </head>
 
-<body class="text-white min-h-screen p-12">
+<body class="text-white min-h-screen relative overflow-x-hidden">
 
-<a href="index.html" class="text-gray-400 hover:text-white">← Home</a>
+<!-- Glow -->
+<div class="absolute inset-0 -z-10 flex justify-center pointer-events-none">
+  <div class="w-[600px] h-[600px] glow"></div>
+</div>
 
-<h1 class="text-5xl font-bold mt-10">ClinAssist AI</h1>
-<p class="text-gray-400 text-xl mt-4 max-w-3xl">
-ClinAssist is an AI-powered clinical documentation and coding engine that
-converts doctor notes into structured, ICD-10-coded, FHIR-compatible medical records.
-</p>
+<!-- Nav -->
+<nav class="flex justify-between p-6 border-b border-white/10 backdrop-blur">
+  <a href="index.html" class="text-gray-400 hover:text-white">← Home</a>
+  <div class="text-gray-400">ClinAssist AI</div>
+</nav>
 
-<div class="mt-16 bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-xl">
-<pre class="text-gray-300">
+<section class="max-w-6xl mx-auto px-10 py-24">
+
+  <!-- Hero -->
+  <div class="grid md:grid-cols-2 gap-16 items-center">
+    <div>
+      <h1 class="text-6xl font-bold leading-tight">
+        ClinAssist<br>
+        <span class="text-blue-500">Clinical AI Engine</span>
+      </h1>
+
+      <p class="text-gray-400 text-xl mt-6 max-w-xl">
+        ClinAssist is an AI-powered clinical documentation and coding system
+        that converts doctor notes into ICD-10-coded, FHIR-compatible medical records.
+      </p>
+    </div>
+
+    <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-xl shadow-2xl float">
+      <h2 class="text-lg font-semibold mb-4">End-to-end pipeline</h2>
+      <pre class="text-gray-300 text-sm leading-relaxed">
 Doctor note
 → LLM fact extraction
 → ICD-10 semantic engine
 → SOAP + insurance text
 → Database
-→ FHIR Bundle
-</pre>
-</div>
-
-<div class="grid md:grid-cols-2 gap-10 mt-16">
-  <div class="bg-white/5 border border-white/10 p-8 rounded-2xl">
-    <h2 class="text-xl font-semibold">Why it matters</h2>
-    <p class="text-gray-400 mt-3">
-      Hospitals, insurers, and ABDM require structured records.
-      Doctors write free-text. ClinAssist bridges that gap.
-    </p>
+→ FHIR R4 bundle
+      </pre>
+    </div>
   </div>
 
-  <div class="bg-white/5 border border-white/10 p-8 rounded-2xl">
-    <h2 class="text-xl font-semibold">What I built</h2>
-    <ul class="text-gray-400 mt-3 space-y-2">
-      <li>• FAISS + SentenceTransformer ICD engine</li>
-      <li>• Patient-level visit tracking</li>
-      <li>• FHIR R4 bundle generator</li>
-      <li>• Insurance-ready SOAP output</li>
-    </ul>
+  <!-- Value + Features -->
+  <div class="grid md:grid-cols-2 gap-10 mt-24">
+
+    <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-xl">
+      <h2 class="text-2xl font-semibold">Why it matters</h2>
+      <p class="text-gray-400 mt-4 leading-relaxed">
+        Hospitals, insurers, and ABDM require structured medical records.
+        Doctors produce free-text. ClinAssist bridges this gap by converting
+        raw clinical language into interoperable healthcare data.
+      </p>
+    </div>
+
+    <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-xl">
+      <h2 class="text-2xl font-semibold">What I built</h2>
+      <ul class="text-gray-400 mt-4 space-y-3">
+        <li>• FAISS-powered ICD-10 semantic engine</li>
+        <li>• Longitudinal patient visit tracking</li>
+        <li>• FHIR R4 bundle generator</li>
+        <li>• Insurance-ready SOAP outputs</li>
+      </ul>
+    </div>
+
   </div>
-</div>
+
+</section>
 
 </body>
 </html>

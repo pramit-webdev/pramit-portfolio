@@ -1,48 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <title>Resume — Pramit Das</title>
 <script src="https://cdn.tailwindcss.com"></script>
+
 <style>
-body { background: radial-gradient(circle at 20% 20%, #111827, #000000 60%); }
+body {
+  background: radial-gradient(circle at 20% 20%, #111827, #000000 60%);
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.glow {
+  background: radial-gradient(circle at center, rgba(59,130,246,0.35), transparent 70%);
+  filter: blur(80px);
+}
 </style>
 </head>
 
-<body class="text-white min-h-screen p-12">
+<body class="text-white min-h-screen relative overflow-x-hidden">
 
-<a href="index.html" class="text-gray-400 hover:text-white">← Home</a>
+<!-- Glow -->
+<div class="absolute inset-0 -z-10 flex justify-center pointer-events-none">
+  <div class="w-[600px] h-[600px] glow"></div>
+</div>
 
-<h1 class="text-5xl font-bold mt-10">Pramit Das</h1>
-<p class="text-gray-400 text-xl mt-2">AI Backend Engineer</p>
+<nav class="flex justify-between p-6 border-b border-white/10 backdrop-blur">
+  <a href="index.html" class="text-gray-400 hover:text-white">← Home</a>
+  <div class="text-gray-400">Resume</div>
+</nav>
 
-<div class="grid md:grid-cols-2 gap-10 mt-16">
+<section class="max-w-6xl mx-auto px-10 py-24">
 
-  <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-xl">
-    <h2 class="text-xl font-semibold">Experience</h2>
-    <p class="text-gray-400 mt-4">
-      <strong>Backend Developer — Trailique.ai</strong><br>
-      Built FastAPI, healthcare AI agents, RAG pipelines,
-      document intelligence systems, and production APIs.
+  <!-- Header -->
+  <div class="mb-16">
+    <h1 class="text-6xl font-bold">Pramit Das</h1>
+    <p class="text-blue-500 text-xl mt-2">AI Backend Engineer</p>
+    <p class="text-gray-400 mt-4 max-w-2xl">
+      Backend engineer specializing in AI systems, healthcare data pipelines,
+      and production-grade RAG and NLP platforms.
     </p>
   </div>
 
-  <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-xl">
-    <h2 class="text-xl font-semibold">Skills</h2>
-    <p class="text-gray-400 mt-4">
-      Python, FastAPI, FAISS, LangGraph, Whisper,
-      SentenceTransformers, RAG, SQL
+  <!-- Experience + Skills -->
+  <div class="grid md:grid-cols-2 gap-12">
+
+    <div class="bg-white/5 border border-white/10 p-10 rounded-2xl backdrop-blur-xl shadow-2xl float">
+      <h2 class="text-2xl font-semibold mb-4">Experience</h2>
+      <p class="text-gray-300 leading-relaxed">
+        <strong class="text-white">Backend Developer — Trailique.ai</strong><br><br>
+        Built and deployed FastAPI-based healthcare AI agents,
+        document intelligence systems, and retrieval-augmented generation pipelines.
+        Designed ICD-10 semantic search, patient-level tracking,
+        and FHIR-compatible data exports for real clinical workflows.
+      </p>
+    </div>
+
+    <div class="bg-white/5 border border-white/10 p-10 rounded-2xl backdrop-blur-xl">
+      <h2 class="text-2xl font-semibold mb-4">Core skills</h2>
+      <p class="text-gray-300 leading-relaxed">
+        Python, FastAPI, FAISS, LangGraph, Whisper,
+        SentenceTransformers, RAG pipelines, SQL,
+        vector search, and production API design.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Education -->
+  <div class="bg-white/5 border border-white/10 p-10 rounded-2xl backdrop-blur-xl mt-16">
+    <h2 class="text-2xl font-semibold mb-4">Education</h2>
+    <p class="text-gray-300 leading-relaxed">
+      <strong class="text-white">MCA</strong> — MAKAUT (WBUT)<br>
+      <strong class="text-white">BCA</strong> — WBUT
     </p>
   </div>
 
-</div>
-
-<div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-xl mt-10">
-  <h2 class="text-xl font-semibold">Education</h2>
-  <p class="text-gray-400 mt-4">
-    MCA — MAKAUT (WBUT)<br>
-    BCA — WBUT
-  </p>
-</div>
+</section>
 
 </body>
 </html>
